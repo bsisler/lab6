@@ -1,48 +1,6 @@
 import java.util.*;
 
-public class DotChaser {
-  public static Random rand = new Random(System.currentTimeMillis());
-
-  /**
-   * A "Thing" moves in a grid world. A TypeA Thing randomly
-   * decides to turn left or right (or not turn) every "round",
-   * and, afterward, takes a step forward.  A TypeB Thing
-   * only considers making a random turn every 10th round.
-   *
-   */
-
-
-  // EEEEEK! STATIC METHODS!!! PLEASE FIND THEM A BETTER HOME.
-
-  public static void maybeTurn(Thing t) {
-    int i = rand.nextInt(3);
-
-    if (t.isTypeB) {
-      t.timeSinceLast++;
-
-      if (t.timeSinceLast == 10) {
-        t.timeSinceLast = 0;
-
-        if (i == 1) {
-          rightTurn(t);
-        }
-
-        if (i == 2) {
-          leftTurn(t);
-        }
-      }
-    } else   {
-      if (i == 1) {
-        rightTurn(t);
-      }
-
-      if (i == 2) {
-        leftTurn(t);
-      }
-    }
-  }
-
-  
+public class DotChaser {  
   /**
    * This static method is ok :)
    */
