@@ -6,7 +6,7 @@ public class TypeB extends Thing {
     public void maybeTurn() {
         timeSinceLast++;
         if (timeSinceLast == 10) {
-            timeSinceLast == 0;
+            timeSinceLast = 0;
             int i = rand.nextInt(3);
             if (i == 1) {
                 rightTurn();
