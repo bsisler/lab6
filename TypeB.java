@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class TypeB extends Thing {
     public TypeB (int row, int col, char lab) {
         super(row, col, lab);
