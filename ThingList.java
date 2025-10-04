@@ -1,5 +1,3 @@
-import java.util.function.Consumer;
-
 public class ThingList {
     private Node head;
 
@@ -17,12 +15,31 @@ public class ThingList {
         head = n;
     }
 
-    public void forAll(Consumer<Thing> action) {
-        Node curr = head;
+    public void addAll(ThingList other) {
+        Node curr = other.head;
         while (curr != null) {
-            action.accept(curr.data);
+            this.add(curr.data);
             curr = curr.next;
         }
+    }
+
+    public void moveAll() {
+        Node curr = head;
+        while (curr != null) {
+            curr.data.maybeTurn();
+            curr.data.step();
+            curr = curr.next;
+        }
+    }
+
+    public void printAll() {
+        Node curr = head;
+        while (curr != null) {
+            System.out.println(curr.data);
+            curr = curr.next;
+        }
+        System.out.println("done");
+        System.out.flush();
     }
 }
 

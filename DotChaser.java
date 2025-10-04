@@ -23,15 +23,10 @@ public class DotChaser {
       }
 
       // Print out each thing.
-      list.forAll(t -> System.out.println(t));
-      System.out.println("done");
-      System.out.flush();
+      list.printAll();
 
       // Move each thing.
-      list.forAll (t -> {
-        t.maybeTurn();
-        t.step();
-      });
+      list.moveAll();
       count++;
     }
   }
