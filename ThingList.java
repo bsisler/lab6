@@ -17,9 +17,9 @@ public class ThingList {
         head = n;
     }
 
-    public void forEach(Consumer<Thing> action) {
+    public void forAll(Consumer<Thing> action) {
         Node curr = head;
-        while (curr != NULL) {
+        while (curr != null) {
             action.accept(curr.data);
             curr = curr.next;
         }
