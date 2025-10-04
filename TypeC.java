@@ -3,7 +3,7 @@ public class TypeC extends Thing{
         super(row, col, lab);
     }
     private boolean diagonal = true;
-    public void maybeTurn() {
+    public void maybeTurn(Random rand) {
         if (diagonal == true) {
             leftTurn();
         } else {

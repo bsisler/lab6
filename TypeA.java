@@ -3,7 +3,7 @@ public class TypeA extends Thing {
         super(row, col, lab);
     }
 
-    public void maybeTurn() {
+    public void maybeTurn(Random rand) {
         int i = rand.nextInt(3);
         if (i == 1) {
             rightTurn();

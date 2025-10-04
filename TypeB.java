@@ -3,7 +3,7 @@ public class TypeB extends Thing {
         super(row, col, lab);
     }
 
-    public void maybeTurn() {
+    public void maybeTurn(Random rand) {
         timeSinceLast++;
         if (timeSinceLast == 10) {
             timeSinceLast = 0;

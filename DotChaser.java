@@ -12,21 +12,22 @@ public class DotChaser {
 
     // Linked List of Things
     ThingList list = new ThingList();
+    Random rand = new Random(System.currentTimeMillis());
     int count = 0;
 
     while( true ) {
       // Every N rounds, add another typeA and typeB and typeC Thing.
       if( count % N == 0 ) {
-        list.add(new TypeA(45, 50, 'r'));
-        list.add(new TypeB(55, 50, 'b'));
-        list.add(new TypeC(50, 60, 'y'));
+        list.addThing(new TypeA(45, 50, 'r'));
+        list.addThing(new TypeB(55, 50, 'b'));
+        list.addThing(new TypeC(50, 60, 'y'));
       }
 
       // Print out each thing.
       list.printAll();
 
       // Move each thing.
-      list.moveAll();
+      list.moveAll(rand);
       count++;
     }
   }

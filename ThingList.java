@@ -9,24 +9,16 @@ public class ThingList {
         }
     }
 
-    public void add(Thing t) {
+    public void addThing(Thing t) {
         Node n = new Node(t);
         n.next = head;
         head = n;
     }
 
-    public void addAll(ThingList other) {
-        Node curr = other.head;
-        while (curr != null) {
-            this.add(curr.data);
-            curr = curr.next;
-        }
-    }
-
-    public void moveAll() {
+    public void moveAll(Random rand) {
         Node curr = head;
         while (curr != null) {
-            curr.data.maybeTurn();
+            curr.data.maybeTurn(rand);
             curr.data.step();
             curr = curr.next;
         }

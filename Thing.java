@@ -34,7 +34,7 @@ public abstract class Thing {
         dir = (dir + 3) % 4;
     }
 
-    public abstract void maybeTurn();
+    public abstract void maybeTurn(Random rand);
 
     //Move one step
     public void step() {
