@@ -1,13 +1,28 @@
+import java.util.function.Consumer;
+
 public class ThingList {
-    
+    private Node head;
+
+    private class Node {
+        Thing data;
+        Node next;
+        Node(Thing t) {
+            data = t;
+        }
+    }
+
+    public void add(Thing t) {
+        Node n = new Node(t);
+        n.next = head;
+        head = n;
+    }
+
+    public void forEach(Consumer<Thing> action) {
+        Node curr = head;
+        while (curr != NULL) {
+            action.accept(curr.data);
+            curr = curr.next;
+        }
+    }
 }
-/**
-   * YOU'LL NEED TO PUT THIS SOMEWHERE ELSE
-   * HINT: WOULDN'T IT BE NICE TO HAVE A LIST OR QUEUE SO THAT
-   *       WE DON'T HAVE TO USE NODES HERE?
-   * This class is for linked lists of Thing's
-   */
-private class Node {
-    public Thing data;
-    public Node next;
-}
+
