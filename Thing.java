@@ -5,7 +5,7 @@ public abstract class Thing {
     protected int col;
     protected int dir;
     protected int timeSinceLast;
-    protected char. lab;
+    protected char lab;
     protected Random rand;
     
     /*
@@ -14,7 +14,7 @@ public abstract class Thing {
     * and, afterward, takes a step forward.  A TypeB Thing
     * only considers making a random turn every 10th round.
     */
-    
+
     public Thing(int row, int col, char lab) {
         this.row = row;
         this.col = col;
@@ -44,5 +44,9 @@ public abstract class Thing {
         int[] dc = {0, 1, 0, -1};
         row = row + dr[dir];
         col = col + dc[dir];
+    }
+
+    public String toString() {
+        return row + " " + col + " " + lab;
     }
 }
